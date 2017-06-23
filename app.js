@@ -108,6 +108,7 @@ function close(event){
       orders.splice([i],1);
     }
   }
+  pushStorage();
   wipe();
   renderOrder();
 }
