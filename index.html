@@ -7,6 +7,51 @@
     <title>Order Creation</title>
   </head>
   <body>
+    <form id="input">
+      <fieldset>
+        <h1>Order Form</h1>
+        <h3>Item:</h3>
+        <select id="drop-down">
+          <option value="bag">R2D2 Travel Bag</option>
+          <option value="banana">Banana Slicer</option>
+          <option value="bathroom">iPad Tp Dispenser</option>
+          <option value="boots">Open Toed Rain Boots</option>
+          <option value="breakfast">All-in-One Breakfast Appliance</option>
+          <option value="bubblegum">Meatball Bubble Gum</option>
+          <option value="chair">Awkward Shaped Chair</option>
+          <option value="cthulhu">Cthulhu Toy Figure</option>
+          <option value="dog-duck">Duck Mask for a dog</option>
+          <option value="dragon">Canned Dragon Meat</option>
+          <option value="pen">Utensil Pen Caps</option>
+          <option value="pet-sweep">Pet Sweep Boots</option>
+          <option value="scissors">Pizza Slice Scissors</option>
+          <option value="shark">Shark Sleeping Bag</option>
+          <option value="sweep">Baby Onesie Mop</option>
+          <option value="tauntaun">Star Wars Tauntaun Sleeping Bag</option>
+          <option value="unicorn">Canned Unicorn Meat</option>
+          <option value="usb">Wiggling USB tentacle</option>
+          <option value="water-can">Water Can Gag Gift</option>
+          <option value="wine-glass">Spill Proof Wine Glass</option>
+        </select>
+        <h3>Quantity</h3>
+        <input type="number" id="quantity">
+        <h3>Name</h3>
+        <input type="text" id="name">
+        <h3>Street</h3>
+        <input type="text" id="street">
+        <h3>City</h3>
+        <input type="text" id="city">
+        <h3>State</h3>
+        <input type="text" id="state">
+        <h3>Zip Code</h3>
+        <input type="number" id="zip">
+        <h3 id="phone">Phone Number (format: xxx-xxx-xxxx):</h3>
+        <input id="phone" type="tel" pattern="^\d{3}-\d{3}-\d{4}$" required>
+        <h3>Credit Card Number</h3>
+        <input type="number" id="payment">
+        <button type="submit" id="order">Order Now</button>
+      </fieldset>
+    </form>
     <script src="app.js" charset="utf-8"></script>
   </body>
 </html>
