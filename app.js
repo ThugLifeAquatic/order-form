@@ -5,6 +5,7 @@
 var orders = [];
 var allProducts = [];
 var delOrder = '';
+
 function Item(product, path) {
   this.name = '';
   this.product = product;
@@ -17,13 +18,16 @@ function Item(product, path) {
   this.payment = '';
   allProducts.push(this);
 }
+
 function pushStorage() {
   var protoAll = JSON.stringify(orders);
   localStorage.setItem('all', protoAll);
 }
+
 //////////////////////////////
 //FORM FUNCTIONS//////////////
 //////////////////////////////
+
 function handleSubmit(event) {
   console.log('HandleSubmit!!');
   event.preventDefault();
@@ -55,20 +59,24 @@ function handleSubmit(event) {
   }
   pushStorage();
 }
+
 //////////////////////////////
 //ORDER FUNCTIONS/////////////
 //////////////////////////////
 var orderList = document.getElementById('orderList');
+
 function pullStorage() {
   var protoAll = localStorage.getItem('all');
   orders = JSON.parse(protoAll);
 }
+
 //wipe screen for redraw
 function wipe() {
   while (orderList.firstChild) {
     orderList.removeChild(orderList.firstChild);
   }
 }
+
 function renderOrder() {
   wipe();
   for (var i = 0; i < orders.length; i++) {
@@ -99,6 +107,7 @@ function renderOrder() {
     buttonEl.addEventListener('click', close);
   }
 }
+
 function close(event){
   var del = event.target.parentElement.id;
   console.log(del.parentElement);
@@ -111,6 +120,7 @@ function close(event){
   wipe();
   renderOrder();
 }
+
 new Item('bag', 'images/bag.jpg');
 new Item('banana', 'images/banana.jpg');
 new Item('bathroom', 'images/bathroom.jpg');
@@ -131,6 +141,7 @@ new Item('unicorn', 'images/unicorn.jpg');
 new Item('usb', 'images/usb.gif');
 new Item('water-can', 'images/water-can.jpg');
 new Item('wine-glass', 'images/wine-glass.jpg');
+
 if (document.getElementById('orderList')) {
   pullStorage();
   renderOrder();
